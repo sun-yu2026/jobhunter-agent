@@ -1,0 +1,22 @@
+岗位:大模型应用工程师
+
+我们正在寻找一位对大模型充满热情的工程师加入 AI 中台团队。
+
+职责:
+- 设计并实现企业内部 AI Copilot,覆盖代码、文档、数据分析场景
+- 使用 LangGraph 编排复杂 workflow,处理多步骤任务
+- 优化 RAG 系统的召回率与准确率
+- 参与 Prompt 模板管理平台的建设
+
+技术要求:
+1. Python 3 年以上开发经验
+2. 深入理解 Transformer 架构,了解主流开源模型(Qwen / DeepSeek / Llama)
+3. 熟悉 langchain / llamaindex 至少一个主流框架
+4. 熟悉向量数据库
+5. 具备较强的问题拆解能力和快速学习能力
+
+优先考虑:
+- 有 SFT / LoRA 微调经验
+- 熟悉 Ray / vLLM 等推理加速方案
+- 有大规模 RAG(百万级文档)落地经验
+- ACM / Kaggle 获奖者

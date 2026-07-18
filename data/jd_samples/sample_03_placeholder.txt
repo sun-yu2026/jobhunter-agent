@@ -1,0 +1,20 @@
+Job Title: AI Agent Engineer(Agent 工程师)
+
+Responsibilities:
+- 从 0 到 1 搭建多 Agent 协作系统,支持工具调用、长期记忆、任务规划
+- 基于 LangGraph 构建 supervisor / worker 结构
+- 实现 Function Calling / MCP 工具集成
+- 输出 Agent 效果评测报告,持续优化
+
+Requirements:
+- Python 熟练,能独立完成后端服务开发
+- 熟悉 FastAPI、异步编程(asyncio)
+- 深入使用过 LangChain / LangGraph,理解 State / Node / Edge 概念
+- 熟悉至少一个向量数据库(Chroma / Weaviate / Milvus)
+- 有独立解决问题的能力,能主动沟通反馈进度
+
+Nice to have:
+- 有 AutoGen / CrewAI / MetaGPT 项目经验
+- 熟悉 Docker、K8s 部署
+- 熟悉 LangSmith / LangFuse 可观测性工具
+- 有 Streamlit / Gradio 快速原型开发经验
