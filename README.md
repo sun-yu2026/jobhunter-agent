@@ -40,7 +40,7 @@
           ↓
       评分报告
 
-  > 详细架构图见 [docs/architecture.png](docs/architecture.png) *(Day 4 完成)*
+  > 详细架构图见 [docs/architecture.md](docs/architecture.md)(含 Mermaid 数据流图 + 系统分层图)
 
   ---
 
@@ -50,6 +50,8 @@
     ## 📅 项目进度
 
   - [x] Day 1: 项目立项 + Repo 初始化
+  - [x] Day 2-3: JD Analyzer MVP(Schema + Prompt + 3 份样本 JD 集成测试)
+  - [x] Day 4: 系统架构图([docs/architecture.md](docs/architecture.md))
   - [ ] Week 1: 需求调研(20 份 JD 分析) + 环境搭建
   - [ ] Week 2: JD Analyzer Agent
   - [ ] Week 3: Resume Matcher Agent + PDF 解析
@@ -70,7 +72,7 @@
   ## 📖 项目文档
 
   - [产品需求文档 PRD](docs/PRD.md) *(Day 3 完成)*
-  - [系统架构图](docs/architecture.png) *(Day 4 完成)*
+  - [系统架构图](docs/architecture.md) *(Day 4 完成)*
 
   ---
 
