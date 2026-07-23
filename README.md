@@ -21,7 +21,7 @@
   |------|------|------|
   | **JD Analyzer** | 岗位 JD 文本 | 结构化 JD(硬技能/软技能/加分项) |
   | **Resume Matcher** | 简历文本 + `JDAnalysis` | 70/20/10 分项打分 + 命中/缺失 + 总评 |
-  | **Gap Coach** | 匹配结果 | 缺口清单 + 高频面试题推荐 |
+  | **Gap Coach** | `MatchResult` + `JDAnalysis` | 带优先级的缺口清单 + 学习路径 + 面试题 + 简历改写建议 |
   | **Mock Interviewer** | 用户答题 | 多轮追问 + 4 维度评分报告 |
 
   ---
@@ -54,6 +54,7 @@
   - [x] Day 4: 系统架构图([docs/architecture.md](docs/architecture.md))
   - [x] Day 5-6: Resume Matcher 文本 MVP(Schema + Prompt + 70/20/10 评分 + 测试)
   - [x] Day 7: Resume Parser PDF 解析(pypdf + 文本清洗 + 9 项异常/清洗测试)
+  - [x] Day 8: Gap Coach Agent(缺口优先级 + 学习路径 + 面试题 + 8 项逻辑测试)
   - [ ] Week 1: 需求调研(20 份 JD 分析) + 环境搭建
   - [ ] Week 2: JD Analyzer Agent
   - [ ] Week 3: Resume Matcher 结构化 Schema(文本 MVP + PDF 解析已完成)

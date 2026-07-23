@@ -47,14 +47,14 @@ flowchart TD
 |---|-------|------|------|------|
 | 1 | **JD Analyzer** | `jd_text: str` | `JDAnalysis`(硬技能 / 软技能 / 加分项 / job_title) | ✅ Day 2-3 完成 |
 | 2 | **Resume Matcher** | 简历文本 + `JDAnalysis` | `MatchResult`(总分 / 分项分 / 命中 / 缺失 / 总评) | ✅ Day 5-6 文本 MVP + Day 7 PDF 解析 |
-| 3 | **Gap Coach** | `MatchResult` + 题库 | `GapReport`(缺口清单 / 推荐题目列表) | 📋 Week 4 |
+| 3 | **Gap Coach** | `MatchResult` + `JDAnalysis` | `GapReport`(带优先级的缺口清单 / 学习路径 / 面试题 / 简历改写建议) | ✅ Day 8 MVP(题库版留待 Week 4) |
 | 4 | **Mock Interviewer** | `GapReport` + 用户答题 | `InterviewReport`(多轮记录 / 四维评分) | 📋 Week 5 |
 
 ### 职责边界的关键约定
 
 - **JD Analyzer** 只做**抽取**,不做归纳、不做改写。
 - **Resume Matcher** 由 LLM 判断语义命中,由 Python 补全缺失并按硬技能 70% / 软技能 20% / 加分项 10% 确定性计算分数。
-- **Gap Coach** 把 Matcher 的"缺失"转成**可执行的补强路径**——这才是它独立存在的价值。
+- **Gap Coach** 由 LLM 生成 why / learn_path / interview_questions / quick_wins,由 Python 按类别打优先级(硬=high/软=medium/加分=low)、排序、截断到 top-N、钳位 estimated_days —— 语义与规则严格分离。
 - **Mock Interviewer** 只做**追问和评分**,不承担出题职责(题目来自 Gap Coach)。
 
 > 之所以严格划分,是为了让每个 Agent 的 Prompt 和 Schema 都能独立演进,不至于一个 Agent 的改动引起雪崩式返工。
@@ -133,7 +133,7 @@ flowchart TB
 | `JDAnalysis` | `schemas/jd.py` | ✅ |
 | `Resume` | `schemas/resume.py` | 📋 PDF 解析阶段 |
 | `MatchResult` | `schemas/match.py` | ✅ |
-| `GapReport` | `schemas/gap.py` | 📋 |
+| `GapReport` | `schemas/gap.py` | ✅ |
 | `InterviewReport` | `schemas/interview.py` | 📋 |
 
 > 图例:✅ 已完成 · 🚧 进行中 · 📋 待启动
