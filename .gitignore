@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Claude Code 本地配置(skills 缓存 / 临时 worktree),不入库
+.claude/
