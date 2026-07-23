@@ -46,14 +46,14 @@ flowchart TD
 | # | Agent | 输入 | 输出 | 状态 |
 |---|-------|------|------|------|
 | 1 | **JD Analyzer** | `jd_text: str` | `JDAnalysis`(硬技能 / 软技能 / 加分项 / job_title) | ✅ Day 2-3 完成 |
-| 2 | **Resume Matcher** | 简历文本 + `JDAnalysis` | `MatchResult`(总分 / 分项分 / 命中 / 缺失 / 总评) | 🚧 Day 5-6 |
+| 2 | **Resume Matcher** | 简历文本 + `JDAnalysis` | `MatchResult`(总分 / 分项分 / 命中 / 缺失 / 总评) | ✅ Day 5-6 文本 MVP + Day 7 PDF 解析 |
 | 3 | **Gap Coach** | `MatchResult` + 题库 | `GapReport`(缺口清单 / 推荐题目列表) | 📋 Week 4 |
 | 4 | **Mock Interviewer** | `GapReport` + 用户答题 | `InterviewReport`(多轮记录 / 四维评分) | 📋 Week 5 |
 
 ### 职责边界的关键约定
 
 - **JD Analyzer** 只做**抽取**,不做归纳、不做改写。
-- **Resume Matcher** 只做**事实陈述**(谁命中谁缺失),打分要有依据。
+- **Resume Matcher** 由 LLM 判断语义命中,由 Python 补全缺失并按硬技能 70% / 软技能 20% / 加分项 10% 确定性计算分数。
 - **Gap Coach** 把 Matcher 的"缺失"转成**可执行的补强路径**——这才是它独立存在的价值。
 - **Mock Interviewer** 只做**追问和评分**,不承担出题职责(题目来自 Gap Coach)。
 
@@ -131,8 +131,8 @@ flowchart TB
 | Schema | 文件 | 状态 |
 |--------|------|------|
 | `JDAnalysis` | `schemas/jd.py` | ✅ |
-| `Resume` | `schemas/resume.py` | 🚧 |
-| `MatchResult` | `schemas/match.py` | 🚧 |
+| `Resume` | `schemas/resume.py` | 📋 PDF 解析阶段 |
+| `MatchResult` | `schemas/match.py` | ✅ |
 | `GapReport` | `schemas/gap.py` | 📋 |
 | `InterviewReport` | `schemas/interview.py` | 📋 |
 
